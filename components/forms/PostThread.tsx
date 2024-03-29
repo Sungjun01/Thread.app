@@ -33,7 +33,7 @@ function PostThread({ userId }: Props) {
   const form = useForm<z.infer<typeof ThreadValidation>>({
     resolver: zodResolver(ThreadValidation),
     defaultValues: {
-      thread: "",
+      thread: '',
       accountId: userId,
     },
   });

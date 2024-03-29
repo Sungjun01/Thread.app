@@ -2,9 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { currentUser } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
-import { fetchUser, getActivity } from "@/lib/actions/user.action";
 
-
+import { fetchUser, getActivity } from "@/lib/actions/user.actions";
 
 async function Page() {
   const user = await currentUser();

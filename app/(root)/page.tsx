@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import ThreadCard from "@/components/cards/ThreadCard";
 
 import { fetchPosts } from "@/lib/actions/thread.actions";
+import { fetchUser } from "@/lib/actions/user.actions";
 
 
 async function Home({
@@ -13,6 +14,9 @@ async function Home({
 }) {
   const user = await currentUser();
   if (!user) return null;
+
+  const userInfo = await fetchUser(user.id);
+  if (!userInfo?.onboarded) redirect("/onboarding");
 
   const result = await fetchPosts(
     searchParams.page ? +searchParams.page : 1,

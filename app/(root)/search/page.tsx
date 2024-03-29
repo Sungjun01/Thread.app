@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 import { currentUser } from "@clerk/nextjs";
 
-import { fetchUser, fetchUsers } from "@/lib/actions/user.action";
+import { fetchUser, fetchUsers } from "@/lib/actions/user.actions";
 import UserCard from "@/components/cards/UserCard";
 
 
